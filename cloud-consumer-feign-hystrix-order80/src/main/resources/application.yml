@@ -1,0 +1,32 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: hystrix-consumer-order       # 应用名称
+
+eureka:
+  client:
+    register-with-eureka: true    # 将自己注册到 eureka server, 默认为true
+    fetch-registry: true      # 从eureka server抓取已有的注册信息, 默认为true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+feign:
+  hystrix:
+    enabled: true
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 3000
+#
+## 设置feign超时时间, 默认为1000ms
+#ribbon:
+#  # 建立连接后从服务器读取到可用资源的时间
+#  ReadTimeout: 5000
+#  # 建立连接所用时间
+#  ConnectTimeout: 5000

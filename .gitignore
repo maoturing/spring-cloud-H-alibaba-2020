@@ -1,0 +1,27 @@
+# Project exclude paths
+/cloud-alibaba-config-nacos-client3377/target/
+/cloud-alibaba-consumer-nacos-order83/target/
+/cloud-alibaba-provider-nacos-payment9001/target/
+/cloud-alibaba-provider-nacos-payment9002/target/
+/cloud-alibaba-sentinel-service8401/target/
+/cloud-api-commons/target/
+/cloud-config-center3344/target/
+/cloud-config-client3355/target/
+/cloud-config-client3366/target/
+/cloud-consumer-cocnsul-order80/target/
+/cloud-consumer-feign-hystrix-order80/target/
+/cloud-consumer-feign-order80/target/
+/cloud-consumer-hystrix-dashboard9001/target/
+/cloud-consumer-order80/target/
+/cloud-consumer-zk-order80/target/
+/cloud-eureka-server7001/target/
+/cloud-eureka-server-7002/target/
+/cloud-gateway-gateway9527/target/
+/cloud-provider-consul-payment8006/target/
+/cloud-provider-hystrix-payment8001/target/
+/cloud-provider-payment8001/target/
+/cloud-provider-payment8002/target/
+/cloud-provider-payment8004/target/
+/cloud-stream-rabbit-consumer8802/target/
+/cloud-stream-rabbit-consumer8803/target/
+/cloud-stream-rabbitmq-provider8801/target/

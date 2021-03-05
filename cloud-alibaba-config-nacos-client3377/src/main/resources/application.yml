@@ -1,0 +1,5 @@
+spring:
+  profiles:
+  #  active: info
+  # active: test  # 激活测试环境
+    active: dev  #激活开发环境

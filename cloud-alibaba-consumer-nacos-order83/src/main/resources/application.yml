@@ -1,0 +1,14 @@
+server:
+  port: 83
+
+spring:
+  application:
+    name: nacos-order-privider
+  cloud:
+    # 配置nacos地址, 为什么nacos控制台端口和服务端口一样?
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+server-url:
+  nacos-user-service: http://nacos-payment-provider

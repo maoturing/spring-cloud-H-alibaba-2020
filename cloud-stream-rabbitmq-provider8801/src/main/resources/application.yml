@@ -1,0 +1,36 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: cloud-stream-provider
+  cloud:
+    stream:
+      binders: # 在此处配置要绑定的rabbitmq的服务信息；
+        defaultRabbit:    # 定义了一个消息中间件名称, 以后consumer和provider都需要绑定到该中间件上
+          type: rabbit    # 消息中间件类型
+          environment:    # 设置rabbitmq的相关的环境配置
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+      # 绑定生产者与消息中间件
+      bindings:
+        output:     # 生产者的通道
+          destination: studyExchange        # 生产者把消息发送到中间件defaultRabbit的交换机studyExchange上
+          # 我真是艹了, applicaiton 拼错了, 找了半天错误....
+          content-type: application/json    # 设置消息类型，本次为json，文本则设置“text/plain”
+          default-binder: defaultRabbit     # 要将生产者绑定的中间件
+          binder: defaultRabbit             # 设置要绑定的消息服务的具体设置(需与自定义名称一致)(飘红：Settings->Editor->Inspections->Spring->Spring Boot->Spring Boot application.yml 对勾去掉)
+
+eureka:
+  client: # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    lease-renewal-interval-in-seconds: 2 # 设置心跳的时间间隔（默认是30秒）
+    lease-expiration-duration-in-seconds: 5 # 如果现在超过了5秒的间隔（默认是90秒）
+    instance-id: send-8801.com  # 在信息列表时显示主机名称
+    prefer-ip-address: true     # 访问的路径变为IP地址

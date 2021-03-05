@@ -1,0 +1,26 @@
+package com.atguigu.springcloud.config;
+
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+
+/**
+ * @author mao  2021/2/25 2:11
+ */
+@Configuration
+public class ApplicationContextConfig {
+    /**
+     * 注入 RestTemplate bean
+     * @LoadBalanced使用robbin进行负载均衡, 注释掉使用我们手写的负载均衡算法
+     *
+     * @return
+     */
+
+    @LoadBalanced   // 开启RestTemplate负载均衡, 也使得可以通过微服务名称来调用服务
+    @Bean
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
+
+}

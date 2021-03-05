@@ -1,0 +1,10 @@
+server:
+  port: 8004
+
+spring:
+  application:
+    name: cloud-provider-payment       # 应用名称, payment不同实例的名称都一样，注册到zk节点
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181    # zk安装在本地docker
+
